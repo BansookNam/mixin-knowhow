@@ -1,5 +1,7 @@
-import 'package:mixin_knowhow/mixin_knowhow.dart' as mixin_knowhow;
+import 'package:mixin_knowhow/animal/animal_bird.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${mixin_knowhow.calculate()}!');
+  final animal = Bird();
+  animal.walk();
+  animal.fly();
 }
