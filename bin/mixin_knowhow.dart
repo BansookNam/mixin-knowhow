@@ -11,4 +11,7 @@ void main(List<String> arguments) {
   final screen = PurchaseGemScreen();
   final widget = screen.createState().build(BuildContext());
   widget.onTap();
+  final screen = PurchaseSubscriptionScreen();
+  final widget = screen.createState().build(BuildContext());
+  widget.onTap();
 }

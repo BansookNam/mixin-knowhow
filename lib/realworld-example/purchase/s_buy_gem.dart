@@ -5,14 +5,14 @@ import 'package:mixin_knowhow/realworld-example/mock-framework/widget.dart';
 import 'package:mixin_knowhow/realworld-example/purchase/mixin/mixin_buy_gem.dart';
 import 'package:mixin_knowhow/realworld-example/purchase/mixin/mixin_inapp_purchse.dart';
 
-class PurchaseGemScreen extends StatefulWidget {
+class BuyGemScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return PurchaseScreenState();
+    return _ScreenState();
   }
 }
 
-class PurchaseScreenState extends State<PurchaseGemScreen> with InAppPurchaseMixin, BuyGemMixin {
+class _ScreenState extends State<BuyGemScreen> with InAppPurchaseMixin, BuyGemMixin {
   @override
   Widget build(BuildContext context) {
     return Widget(onTap: () async {

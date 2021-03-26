@@ -3,14 +3,14 @@ import 'package:mixin_knowhow/realworld-example/mock-framework/state.dart';
 import 'package:mixin_knowhow/realworld-example/mock-framework/statefulwidget.dart';
 import 'package:mixin_knowhow/realworld-example/mock-framework/widget.dart';
 
-class PurchaseScreen extends StatefulWidget {
+class SubscriptionScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return PurchaseScreenState();
+    return _ScreenState();
   }
 }
 
-class PurchaseScreenState extends State<PurchaseScreen> {
+class _ScreenState extends State<SubscriptionScreen> {
   @override
   Widget build(BuildContext context) {
     return Widget();
