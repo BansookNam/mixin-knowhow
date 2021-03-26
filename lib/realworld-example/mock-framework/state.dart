@@ -11,6 +11,7 @@ abstract class State<T extends StatefulWidget> {
 
   @protected
   void setState(VoidCallback fn) {
+    fn();
     print('setState');
   }
 
