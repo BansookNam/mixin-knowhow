@@ -2,6 +2,8 @@ import 'package:mixin_knowhow/realworld-example/mock-framework/buildcontext.dart
 import 'package:mixin_knowhow/realworld-example/mock-framework/state.dart';
 import 'package:mixin_knowhow/realworld-example/mock-framework/statefulwidget.dart';
 import 'package:mixin_knowhow/realworld-example/mock-framework/widget.dart';
+import 'package:mixin_knowhow/realworld-example/purchase/mixin/mixin_inapp_purchse.dart';
+import 'package:mixin_knowhow/realworld-example/purchase/mixin/mixin_subscription.dart';
 
 class SubscriptionScreen extends StatefulWidget {
   @override
@@ -10,9 +12,13 @@ class SubscriptionScreen extends StatefulWidget {
   }
 }
 
-class _ScreenState extends State<SubscriptionScreen> {
+class _ScreenState extends State<SubscriptionScreen> with SubscriptionMixin, InAppPurchaseMixin {
   @override
   Widget build(BuildContext context) {
-    return Widget();
+    return Widget(onTap: () async {
+      print('====Subscribe Button Tapped====');
+      final result = await subscribe(context, 'subscribe_1month');
+      print("====Subscribe ${result ? "success" : "failed"}====");
+    });
   }
 }

@@ -8,8 +8,8 @@ mixin InAppPurchaseMixin {
   Future<bool> inAppPurchase(PurchasedItem purchasedItem, BuildContext context) async {
     print('native: inAppPurchase start: ${purchasedItem.productId}');
     await sleep(200); //add purchase information to service server
-    final result = true; //Random().nextBool();
-    print('native: inAppPurchase ${result ? "success" : "fail"}: ${purchasedItem.productId}');
+    final result = false; //Random().nextBool();
+    print('native: inAppPurchase ${result ? "success" : "failed"}: ${purchasedItem.productId}');
     return result;
   }
 }

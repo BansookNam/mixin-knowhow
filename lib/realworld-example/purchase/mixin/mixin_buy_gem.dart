@@ -12,10 +12,11 @@ mixin BuyGemMixin implements InAppPurchaseMixin, RequestPurchaseInterface {
     final purchasedItem = PurchasedItem(productId);
     final result = await inAppPurchase(purchasedItem, context); //native purchase
     if (!result) {
+      print('domain: buyGem failed: ${productId}');
       return false;
     }
     final requestResult = await requestPurchase(purchasedItem, context);
-    print('domain: buyGem ${result ? "success" : "fail"}: ${productId}');
+    print('domain: buyGem ${requestResult ? "success" : "failed"}: ${productId}');
     return requestResult;
   }
 
@@ -24,7 +25,7 @@ mixin BuyGemMixin implements InAppPurchaseMixin, RequestPurchaseInterface {
     print('api: request buy gem start: ${purchasedItem.productId}');
     await sleep(200); //add purchase information to service server
     final result = true; //Random().nextBool();
-    print('api: request buy gem ${result ? "success" : "fail"}: ${purchasedItem.productId}');
+    print('api: request buy gem ${result ? "success" : "failed"}: ${purchasedItem.productId}');
     return result;
   }
 }

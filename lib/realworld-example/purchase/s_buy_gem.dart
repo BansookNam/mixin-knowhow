@@ -16,8 +16,9 @@ class _ScreenState extends State<BuyGemScreen> with InAppPurchaseMixin, BuyGemMi
   @override
   Widget build(BuildContext context) {
     return Widget(onTap: () async {
+      print('====Buy Gem Button Tapped====');
       final result = await buyGem(context, 'Gem_1250');
-      print("====Buy ${result ? "success" : "failed"}====");
+      print("====Buy Gem ${result ? "success" : "failed"}====");
     });
   }
 }
