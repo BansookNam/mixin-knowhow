@@ -7,20 +7,6 @@ import 'package:mixin_knowhow/realworld-example/purchase/object/o_purchased_item
 import 'package:mixin_knowhow/util/u_async.dart';
 
 mixin SubscriptionMixin implements InAppPurchaseMixin, RequestPurchaseInterface {
-  Future<bool> subscribe(BuildContext context, String productId) async {
-    print('domain: subscribe tap: $productId');
-    final purchasedItem = PurchasedItem(productId);
-    final result = await inAppPurchase(purchasedItem, context);
-    if (!result) {
-      print('domain: subscribe failed: ${productId}');
-      return false;
-    }
-
-    final requestResult = await requestPurchase(purchasedItem, context);
-    print('domain: subscribe ${requestResult ? "success" : "failed"}: ${productId}');
-    return requestResult;
-  }
-
   @override
   Future<bool> requestPurchase(PurchasedItem purchasedItem, BuildContext context) async {
     print('api: request subscribe start: ${purchasedItem.productId}');

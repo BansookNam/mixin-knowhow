@@ -11,11 +11,11 @@ void main(List<String> arguments) async {
   // animal.fly();
   // animal.useStick.hit();
 
-  // final screen = BuyGemScreen();
-  // final widget = screen.createState().build(BuildContext());
-  // await widget.onTap();
+  final screen = BuyGemScreen();
+  final widget = screen.createState().build(BuildContext());
+  await widget.onTap();
 
-  // print('');
+  print('');
 
   // final subscriptionScreen = SubscriptionScreen();
   // final subscriptionWidget = subscriptionScreen.createState().build(BuildContext());
@@ -30,9 +30,9 @@ void main(List<String> arguments) async {
   // await likeScreenWidget.onTap();
   // await likeScreenWidget.onTap();
 
-  print('');
+  //print('');
 
-  final globalDataExistScreen = GlobalDataExistScreen();
-  final globalDataExistWidget = globalDataExistScreen.createState().build(BuildContext());
-  await globalDataExistWidget.onTap();
+  // final globalDataExistScreen = GlobalDataExistScreen();
+  // final globalDataExistWidget = globalDataExistScreen.createState().build(BuildContext());
+  // await globalDataExistWidget.onTap();
 }

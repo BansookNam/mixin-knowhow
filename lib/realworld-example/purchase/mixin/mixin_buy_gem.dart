@@ -7,19 +7,6 @@ import 'package:mixin_knowhow/realworld-example/purchase/object/o_purchased_item
 import 'package:mixin_knowhow/util/u_async.dart';
 
 mixin BuyGemMixin implements InAppPurchaseMixin, RequestPurchaseInterface {
-  Future<bool> buyGem(BuildContext context, String productId) async {
-    print('domain: buyGem start: $productId');
-    final purchasedItem = PurchasedItem(productId);
-    final result = await inAppPurchase(purchasedItem, context); //native purchase
-    if (!result) {
-      print('domain: buyGem failed: ${productId}');
-      return false;
-    }
-    final requestResult = await requestPurchase(purchasedItem, context);
-    print('domain: buyGem ${requestResult ? "success" : "failed"}: ${productId}');
-    return requestResult;
-  }
-
   @override
   Future<bool> requestPurchase(PurchasedItem purchasedItem, BuildContext context) async {
     print('api: request buy gem start: ${purchasedItem.productId}');
