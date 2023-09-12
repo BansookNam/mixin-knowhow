@@ -1,7 +1,7 @@
 import 'package:mixin_knowhow/realworld-example/mock-framework/widget.dart';
 
-class TapWidget extends Widget{
+class Tap extends Widget{
   final void Function() onTap;
 
-  TapWidget({required this.onTap});
+  Tap({required this.onTap});
 }

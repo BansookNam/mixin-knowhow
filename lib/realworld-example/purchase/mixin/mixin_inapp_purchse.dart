@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:mixin_knowhow/realworld-example/mock-framework/buildcontext.dart';
-import 'package:mixin_knowhow/realworld-example/purchase/i_purchase.dart';
+import 'package:mixin_knowhow/realworld-example/purchase/request_purchase_interface.dart';
 import 'package:mixin_knowhow/realworld-example/purchase/mixin/enum_inapp_type.dart';
 import 'package:mixin_knowhow/realworld-example/purchase/object/o_purchased_item.dart';
 import 'package:mixin_knowhow/util/u_async.dart';
@@ -15,7 +15,6 @@ mixin InAppPurchaseMixin implements RequestPurchaseInterface {
       print('domain: ${type.name} failed: ${productId}');
       return false;
     }
-
     final requestResult = await requestPurchase(purchasedItem, context);
     print('domain: ${type.name} ${requestResult ? "success" : "failed"}: ${productId}');
     return requestResult;

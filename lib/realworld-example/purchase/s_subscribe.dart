@@ -17,7 +17,7 @@ class SubscriptionScreen extends StatefulWidget {
 class _ScreenState extends State<SubscriptionScreen> with SubscriptionMixin, InAppPurchaseMixin {
   @override
   Widget build(BuildContext context) {
-    return TapWidget(onTap: () async {
+    return Tap(onTap: () async {
       print('====Subscribe Button Tapped====');
       final result = await inAppPurchase(InAppPurchaseType.Subscription, context, 'subscribe_1month');
       print("====Subscribe ${result ? "success" : "failed"}====");

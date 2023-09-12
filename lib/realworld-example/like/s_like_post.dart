@@ -21,7 +21,7 @@ class _ScreenState extends State<PostScreen> with LikeMixin {
 
   @override
   Widget build(BuildContext context) {
-    return TapWidget(onTap: () async {
+    return Tap(onTap: () async {
       print('====Like Button Tapped, isLike: $isLike');
       await like(!isLike);
       print('====Like Done isLike: $isLike ====');

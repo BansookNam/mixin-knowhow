@@ -1,6 +1,4 @@
 import 'package:mixin_knowhow/realworld-example/global/mixin_global_depend.dart';
-import 'package:mixin_knowhow/realworld-example/like/mixin_like.dart';
-import 'package:mixin_knowhow/realworld-example/global/mixin_global.dart';
 import 'package:mixin_knowhow/realworld-example/global/state_global.dart';
 import 'package:mixin_knowhow/realworld-example/mock-framework/buildcontext.dart';
 import 'package:mixin_knowhow/realworld-example/mock-framework/state.dart';
@@ -18,7 +16,7 @@ class GlobalDataExistScreen extends StatefulWidget {
 class _ScreenState extends GlobalDataState<GlobalDataExistScreen> with GlobalDependMixin {
   @override
   Widget build(BuildContext context) {
-    return TapWidget(onTap: () async {
+    return Tap(onTap: () async {
       sayRender();
     });
   }
