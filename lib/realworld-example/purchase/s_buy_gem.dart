@@ -1,6 +1,7 @@
 import 'package:mixin_knowhow/realworld-example/mock-framework/buildcontext.dart';
 import 'package:mixin_knowhow/realworld-example/mock-framework/state.dart';
 import 'package:mixin_knowhow/realworld-example/mock-framework/statefulwidget.dart';
+import 'package:mixin_knowhow/realworld-example/mock-framework/tap_widget.dart';
 import 'package:mixin_knowhow/realworld-example/mock-framework/widget.dart';
 import 'package:mixin_knowhow/realworld-example/purchase/mixin/enum_inapp_type.dart';
 import 'package:mixin_knowhow/realworld-example/purchase/mixin/mixin_buy_gem.dart';
@@ -16,7 +17,7 @@ class BuyGemScreen extends StatefulWidget {
 class _ScreenState extends State<BuyGemScreen> with InAppPurchaseMixin, BuyGemMixin {
   @override
   Widget build(BuildContext context) {
-    return Widget(onTap: () async {
+    return TapWidget(onTap: () async {
       print('====Buy Gem Button Tapped====');
       final result = await inAppPurchase(InAppPurchaseType.Gem, context, 'Gem_1250');
       print("====Buy Gem ${result ? "success" : "failed"}====");
